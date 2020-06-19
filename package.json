@@ -1,0 +1,49 @@
+{
+  "name": "pmx-gc-stats",
+  "version": "1.0.0",
+  "description": "Stats about Node.js V8 garbage collector are exposed in PM2 for each GC type executed using PMX probes",
+  "author": "Adrien Valcke <adrienvalcke@icloud.com> (https://github.com/adrienv1520)",
+  "main": "lib/index.js",
+  "private": false,
+  "preferGlobal": false,
+  "analyze": false,
+  "license": "MIT",
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=5.6.0"
+  },
+  "scripts": {
+    "test:lint": "eslint lib/",
+    "test:unit": "NODE_ENV=test mocha test/* --exclude test/app/* --exit",
+    "test": "npm run test:lint && npm run test:unit",
+    "start:pm2": "pm2 start test/app/ecosystem.config.js",
+    "stop:pm2": "pm2 stop test-app && pm2 delete test-app && echo \"test-app stopped\" || (echo \"cannot stop test-app\" && exit 1)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adrienv1520/pmx-gc-stats.git"
+  },
+  "keywords": [
+    "pmx",
+    "pm2",
+    "gc",
+    "garbage collector",
+    "stats"
+  ],
+  "files": [
+    "lib"
+  ],
+  "dependencies": {
+    "gc-stats": "~1.4.0",
+    "pmx": "~1.6.7"
+  },
+  "devDependencies": {
+    "chai": "~4.2.0",
+    "eslint": "~5.9.0",
+    "eslint-config-airbnb-base": "~13.1.0",
+    "eslint-plugin-import": "~2.14.0",
+    "express": "~4.17.1",
+    "mocha": "~8.0.1",
+    "pm2": "~4.4.0"
+  }
+}
