@@ -1,6 +1,6 @@
 {
   "name": "pmx-gc-stats",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Stats about Node.js V8 garbage collector are exposed in PM2 for each GC type executed using PMX probes",
   "author": "Adrien Valcke <adrienvalcke@icloud.com> (https://github.com/adrienv1520)",
   "main": "lib/index.js",
